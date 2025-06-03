@@ -677,5 +677,12 @@ async function main() {
   } catch (error) {
     console.error('Error saat membuat proyek:', error);
   }
+  const { createDeFiProject } = require('./defidex');
 
+async function processSlug(slug, data) {
+  const result = await createDeFiProject(slug, data);
+  if (!result) {
+    console.log(`⛔ Proyek ${slug} gagal dibuat.`);
+  }
+  
 main();
