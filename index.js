@@ -663,5 +663,19 @@ async function main() {
 
   scheduleNextRun();
 }
+const { createDeFiProject } = require('./defidex');
+
+async function main() {
+  const slug = 'clear-flame-3474.widget';
+  const data = {
+    // data yang dibutuhkan API
+  };
+
+  try {
+    await createDeFiProject(slug, data);
+    // proses lain jika ada
+  } catch (error) {
+    console.error('Error saat membuat proyek:', error);
+  }
 
 main();
